@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  tfapply:
+  nr1Install:
     name: 'NR1 Install'
     runs-on: ubuntu-latest
     
