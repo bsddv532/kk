@@ -18,7 +18,6 @@ jobs:
         nr1 --version
         nr1 profiles:add --name account-3628623 --api-key NRAK-TZ3U65WTWUB4MG8HD02ON9S7OXF --region us
         nr1 create --type nerdpack --name my-awesome-nerdpack
-        cd my-awesome-nerdpack && nr1 nerdpack:serve
       
 #     - name: NR1 CLI version
 #       run: nr1 --version | sudo bash
