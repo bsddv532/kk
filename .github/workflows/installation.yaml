@@ -1,1 +1,32 @@
-fwger
+name: 'NR1 Installation'
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  tfapply:
+    name: 'NR1 Install'
+    runs-on: ubuntu-latest
+    
+#     env:
+#       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+#       AWS_DEFAULT_REGION: us-east-1
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+
+    # Checks that all Terraform configuration files adhere to a canonical format
+    - name: nr1 cli install
+      run: curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash
+      
+    - name: nr1 cli version
+      run: nr1 --version
+      
+    - name: nr cli version
+      run: nr --version
+
+    
