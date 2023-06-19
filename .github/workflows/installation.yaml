@@ -23,8 +23,8 @@ jobs:
     - name: nr1 cli install
       run: curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash
       
-    - name: nr1 cli version
-      run: nr1 --version
+#     - name: nr1 cli version
+#       run: nr1 --version
       
     - name: nr cli version
       run: nr --version
