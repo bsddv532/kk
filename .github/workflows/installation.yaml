@@ -13,15 +13,23 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Install NR1 CLI
-      run: curl -s https://cli.nr-ext.net/installer.sh | sudo bash
+      run: |
+        curl -s https://cli.nr-ext.net/installer.sh | sudo bash
+        nr1 --version
       
-    - name: NR1 CLI version
-      run: nr1 --version | sudo bash
+#     - name: NR1 CLI version
+#       run: nr1 --version | sudo bash
       
     - name: NR1 Nerdpack Build
       run: |
         nr1 nerdpack:build
         nr1 nerdpack:validate
-
+        
+#     - name: Install NR1 CLI
+#       if: env.SUBMODULE_NAME != ''
+#       run: |
+#         curl -s https://cli.nr-ext.net/installer.sh | sudo bash
+#         nr1 profiles:add --name nr1-apps-us --api-key ${{ secrets.NR1_APPS_KEY_US }} --region us
+# nr1 profiles:add --name account-3628623 --api-key NRAK-TZ3U65WTWUB4MG8HD02ON9S7OXF --region us
   
  
