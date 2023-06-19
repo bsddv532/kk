@@ -8,25 +8,20 @@ jobs:
     name: 'NR1 Install'
     runs-on: ubuntu-latest
     
-#     env:
-#       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
-#       AWS_DEFAULT_REGION: us-east-1
-
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
-
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: nr1 cli install
-      run: curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash
+    - name: Install NR1 CLI
+      run: curl -s https://cli.nr-ext.net/installer.sh | sudo bash
       
-#     - name: nr1 cli version
-#       run: nr1 --version
+    - name: NR1 CLI version
+      run: nr1 --version | sudo bash
       
-    - name: nr cli version
-      run: nr --version
+    - name: NR1 Nerdpack Build
+      run: |
+        nr1 nerdpack:build
+        nr1 nerdpack:validate
 
-    
+  
+ 
