@@ -33,16 +33,7 @@ jobs:
 
         echo "Previous Workflow Status: $PREVIOUS_STATUS"
         
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: Get previous workflow status
-    #   uses: Mercymeilya/last-workflow-status@v0.3.3
-    #   id: last_status
-
-    # - name: PRint 
-    #   run: |
-    #     echo "The status is: ${{ steps.last_status.outputs.status }}"
+    
       
       
       
