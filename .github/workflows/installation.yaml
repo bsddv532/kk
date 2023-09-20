@@ -24,7 +24,7 @@ jobs:
       id: last_status
 
     - name: PRint 
-      run: echo "${steps.last_status.outputs}"
+      run: echo "The status is ${{ steps.last_status.outputs.status }}"
       
       
       
