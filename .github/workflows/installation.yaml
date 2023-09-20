@@ -21,6 +21,7 @@ jobs:
         # nr1 create --type visualization --name visualization1
 
     - name: Get Previous Workflow Run
+      if: always()
       id: get_run
       run: |
         # Get the previous workflow run information using the GitHub API
