@@ -14,8 +14,9 @@ jobs:
 
     - name: Install NR1 CLI
       run: |
-        curl -s https://cli.nr-ext.net/installer.sh | sudo bash
-        nr1 --version
+        echo "Hwllo"
+        # curl -s https://cli.nr-ext.net/installer.sh | sudo bash
+        # nr1 --version
         # nr1 profiles:add --name account-3628623 --api-key NRAK-TZ3U65WTWUB4MG8HD02ON9S7OXF --region us
         # nr1 create --type visualization --name visualization1
 
@@ -24,7 +25,8 @@ jobs:
       id: last_status
 
     - name: PRint 
-      run: echo "The status is ${{ steps.last_status.outputs.status }}"
+      run: |
+        echo "The status is: ${{ steps.last_status.outputs.status }}"
       
       
       
