@@ -31,7 +31,7 @@ jobs:
         # Extract the status of the previous run
         echo "PREVIOUS_STATUS=$(echo "$PREVIOUS_RUN" | jq -r '.conclusion')" >> $GITHUB_OUTPUT
 
-        # echo "Previous Workflow Status: $PREVIOUS_STATUS"
+        echo "Previous Workflow Status: $PREVIOUS_STATUS"
         
     
       
